@@ -61,7 +61,7 @@ public class QuestionActivity extends AppCompatActivity {
         rb4=(RadioButton)findViewById(R.id.radioButton4);
 
         new QuizAPI().execute();
-        new CountDownTimer(300000, 1000) {
+        new CountDownTimer(4000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 String text = String.format(Locale.getDefault(), "%02d : %02d",
@@ -73,16 +73,21 @@ public class QuestionActivity extends AppCompatActivity {
 
             public void onFinish() {
                 timerView.setText("TIME OVER");
-                RadioButton selectedRb = (RadioButton) findViewById(radio_g.getCheckedRadioButtonId());
-                selectedAnswer = selectedRb.getText().toString();
+                try {
+                    RadioButton selectedRb = (RadioButton) findViewById(radio_g.getCheckedRadioButtonId());
+                    selectedAnswer = selectedRb.getText().toString();
 
-                if(selectedAnswer.equals(answers[flag])) {
-                    correct++;
+                    if (selectedAnswer.equals(answers[flag])) {
+                        correct++;
 
+                    } else {
+                        wrong++;
+
+                    }
                 }
-                else {
-                    wrong++;
-
+                catch(Exception e)
+                {
+                    e.printStackTrace();
                 }
                 progressDialog = new ProgressDialog(QuestionActivity.this);
                 progressDialog.setMax(20);
