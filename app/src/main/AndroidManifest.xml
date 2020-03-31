@@ -12,6 +12,7 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:noHistory="true"
+            android:screenOrientation="portrait"
            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,17 +25,20 @@
             android:parentActivityName=".GuideLines"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
             />
         <activity
             android:name=".ResultActivity"
             android:parentActivityName=".QuestionActivity"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
             />
         <activity android:name=".GuideLines"
             android:parentActivityName=".MainActivity"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
             ></activity>
     </application>
 
