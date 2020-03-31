@@ -61,7 +61,7 @@ public class QuestionActivity extends AppCompatActivity {
         rb4=(RadioButton)findViewById(R.id.radioButton4);
 
         new QuizAPI().execute();
-        new CountDownTimer(4000, 1000) {
+        new CountDownTimer(300000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 String text = String.format(Locale.getDefault(), "%02d : %02d",
